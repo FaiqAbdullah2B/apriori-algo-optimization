@@ -2,12 +2,12 @@
 
 ![C++](https://img.shields.io/badge/C++-17%2B-blue.svg)
 
-## 📌 Overview
+## Overview
 This repository contains the source code, experimental setup, and analytical reports for the empirical comparison of classical Frequent Itemset Mining (FIM) algorithms against contemporary hardware-accelerated methodologies. 
 
 Specifically, this project benchmarks the classical **Apriori Algorithm (1994)** against a modern **Linear Table Bitwise FIM Algorithm (2023)**. By transitioning from pointer-based tree structures to contiguous memory layouts and utilizing native CPU bitwise operations, this implementation achieves up to a **1084x speedup** on dense benchmark datasets.
 
-## 🚀 Key Optimizations (The SOTA Approach)
+## Key Optimizations (The SOTA Approach)
 To bypass the traditional bottlenecks of candidate generation and iterative database scanning, our modern implementation utilizes two primary optimizations:
 1. **Memory Layout Transformation (Linear Tables):** Horizontal transactional data is transposed into vertical, contiguous binary arrays (bitsets). This flattens the data structure, eliminating pointer-chasing and maximizing CPU L1/L2 cache hit rates.
 2. **Hardware-Accelerated Support Counting:** Subset-checking is reduced to an $O(1)$ intersection calculation using native 64-bit hardware instructions (`__builtin_popcountll`). The algorithm processes up to 64 transactions per CPU clock cycle via Bitwise `AND` logic.
