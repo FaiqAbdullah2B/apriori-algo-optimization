@@ -1,4 +1,5 @@
-# High-Performance Frequent Itemset Mining: Apriori vs. Bitwise SOTA
+# High-Performance Frequent Itemset Mining
+# Apriori vs. Bitwise SOTA
 
 ![C++](https://img.shields.io/badge/C++-17%2B-blue.svg)
 
@@ -34,15 +35,14 @@ Algorithms were evaluated against standard dense datasets from the FIMI (Frequen
 For maximum performance, ensure you compile with the `-O3` optimization flag to enable hardware-level bitwise registries.
 
 
-# Compile the Apriori Baseline
+### Compile the Apriori Baseline
 g++ -O3 apriori.cpp -o apriori
 
-# Compile the Linear Table Bitwise SOTA
+### Compile the Linear Table Bitwise SOTA
 g++ -O3 bitwise_sota.cpp -o bitwise_sota
 
-Execution
+### Execution
 
-Bash
 ```
 ./apriori
 ./bitwise_sota
